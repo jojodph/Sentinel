@@ -33,6 +33,7 @@ lib/Sentinel.Logging.psm1
 data output:
 - `err` = logs/sektioner
 - `out` = selve dataene
+  
 (Logs på stderr, data på stdout.)
 
 ## Bash
