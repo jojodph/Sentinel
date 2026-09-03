@@ -9,5 +9,20 @@ function Write-SentinelLog {
     )
 
     $t = Get-Date -Format 'o'
-    Write-Host "$t [$Level] $Message"
+
+    [Console]::Error.WriteLine(
+        "$t [$Level] $Message"
+    )
 }
+
+function Write-SentinelSection {
+    param(
+        [Parameter(Mandatory)]
+        [string]$Title
+    )
+
+    [Console]::Error.WriteLine("")
+    [Console]::Error.WriteLine("=== $Title ===")
+}
+
+Export-ModuleMember -Function Write-SentinelLog, Write-SentinelSection
